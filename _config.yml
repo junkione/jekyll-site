@@ -13,23 +13,36 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Jekyll Netlify CMS
+title: JunkSite
 email: junkione+jekyll@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   This is the basic Jekyll starter site, with Netlify CMS integrated and using
   Netlify Identity for authentication.
-baseurl: "/" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
 theme: minimal-mistakes-jekyll
 # remote_theme: "mmistakes/minimal-mistakes@4.16.3"
+words_per_minute: 50
 
-minimal_mistakes_skin: "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+# minimal_mistakes_skin: "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin: aqua
+
+breadcrumbs: true
+search: true
+locale: it
+timezone: Europe/Rome
+paginate: 5
+# paginate_path: /posts/page:num/
 
 # Plugins
-# plugins:
-#   - jekyll-include-cache
+plugins:
+  - jekyll-archives
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-include-cache
 
 # minima theme settings
 show_excerpts: false # set to true to show excerpts on the homepage
@@ -76,3 +89,30 @@ rss: rss
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+# post_archive:
+#   type: jekyll-archives
+#   path: /posts/
+# jekyll-archives:
+#   enabled: all
+#   layouts:
+#     post: archive-taxonomy
+#   permalinks:
+#     year: '/:year/'
+#     month: '/:year/:month/'
+#     day: '/:year/:month/:day/'
+
+# Defaults
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      # author_profile: true
+      read_time: true
+      comments: false
+      # share: true
+      related: true
+      toc: true
