@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title: Prova immagini
 ---
 Ecco qua una bella immagine enorme:

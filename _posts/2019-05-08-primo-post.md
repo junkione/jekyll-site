@@ -1,6 +1,7 @@
 ---
 layout: single
 title: Primo post
+toc: true
 ---
 # Titolone
 
