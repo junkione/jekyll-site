@@ -14,15 +14,16 @@ collections: # A list of collections the CMS should be able to edit
     fields: # The fields each document in this collection have
       - {label: "Layout", name: "layout", widget: "hidden", default: "single"}
       - {label: "Titolo", name: "title", widget: "string", tagname: "h1"}
-      - {label: "Corpo", name: "body", widget: "markdown"}
-      - {label: "Indice", name: "toc", widget: "boolean"}
+      - {label: "Indice", name: "toc", widget: "boolean", default: false}
+      # - {label: "Categories", name: "categories", widget: "string", required: false}
       - label: "Categorie"
         name: "categories"
         widget: "list"
         required: true
         allow_add: false
-      - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD hh:mm:ss"}
-      # - {label: "Categories", name: "categories", widget: "string", required: false}
+      - {label: "Autore", name: "author", widget: "select", options: ["junkione", "pippo"], required: false}
+      - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD hh:mm:ss", required: false}
+      - {label: "Corpo", name: "body", widget: "markdown"}
     meta: # Meta data fields. Just like fields, but without any preview element
 
   - name: "config"
@@ -39,7 +40,6 @@ collections: # A list of collections the CMS should be able to edit
             widget: "list"
             fields:
               - {label: Nome, name: name, widget: string}
-              - {label: Email, name: email, widget: string}
-              - {label: Facebook, name: facebook, widget: string}
-              - {label: Immagine, name: avatar, widget: image, allow_multiple: false, config: {media_folder: "authors"}}
-              - {label: Biografia, name: bio, widget: text}
+              - {label: Email, name: email, widget: string, required: false}
+              - {label: Immagine, name: avatar, widget: image, allow_multiple: false, config: {media_folder: "authors"}, required: false}
+              - {label: Biografia, name: bio, widget: text, required: false}
