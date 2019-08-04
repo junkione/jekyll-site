@@ -34,8 +34,7 @@ collections: # A list of collections the CMS should be able to edit
         name: "authors"
         file: "_data/authors.yml"
         fields:
-          -
-            label: "Autori",
+          - label: "Autori",
             name: "items",
             widget: "list",
             fields:
